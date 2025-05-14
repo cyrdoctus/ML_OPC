@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # run_ai_train.py
+
 import argparse
 import os
+
 from config.app_config import MODEL_ARTIFACTS_DIR, NORMALIZED_GENERATED_DATA_DIR
-from training.predictor import train_lstm_predictor
-from training.corrector import train_fnn_corrector
+from training import train_predictor #, train_fnn_corrector
 
 def main():
     parser = argparse.ArgumentParser(
@@ -19,19 +20,23 @@ def main():
     choice = args.model or input("Which model to train? [ai1 / ai2]: ").strip()
 
     if choice == "ai1":
+        print("👉 Starting training of LSTM predictor (AI1)...")
         ckpt_dir = os.path.join(MODEL_ARTIFACTS_DIR, "ai1_predictor")
         os.makedirs(ckpt_dir, exist_ok=True)
-        train_lstm_predictor(
+        train_predictor(
             data_dir=NORMALIZED_GENERATED_DATA_DIR,
             checkpoint_dir=ckpt_dir
         )
     elif choice == "ai2":
+        '''
+        print("👉 Starting training of FNN corrector (AI2)...")
         ckpt_dir = os.path.join(MODEL_ARTIFACTS_DIR, "ai2_corrector")
         os.makedirs(ckpt_dir, exist_ok=True)
-        train_fnn_corrector(
+        train_corrector(
             data_dir=NORMALIZED_GENERATED_DATA_DIR,
             checkpoint_dir=ckpt_dir
         )
+        '''
     else:
         print(f"Unrecognized choice '{choice}'. Exiting.")
 

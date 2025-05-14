@@ -11,7 +11,8 @@ MODEL_ARTIFACTS_DIR = "/home/nekolny/PycharmProjects/ECE579_FInal_Project/ML_Orb
 RAW_GENERATED_DATA_DIR = "/run/user/1000/gvfs/smb-share:server=truenas.local,share=arrakis/ece579/ece579_data_raw"
 
 # Path for NORMALIZED generated data ready for training
-NORMALIZED_GENERATED_DATA_DIR = "/run/user/1000/gvfs/smb-share:server=truenas.local,share=arrakis/ece579/ece579_data_norm"
+NORMALIZED_GENERATED_DATA_DIR = "/media/skhynix_nvme/AI Compute/ece579/ece579_data_norm"
+    #"/run/user/1000/gvfs/smb-share:server=truenas.local,share=arrakis/ece579/ece579_data_norm"
 
 # --- Paths for Output of the AI Driven Simulation ---
 SIMULATION_OUTPUT_DIR = "/home/nekolny/PycharmProjects/ECE579_FInal_Project/ML_Orbital_Predictor_Corrector/data_sim"

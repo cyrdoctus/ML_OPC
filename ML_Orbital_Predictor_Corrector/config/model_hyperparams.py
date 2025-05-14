@@ -22,7 +22,7 @@ PREDICTOR_MODEL_CONFIG = {
     "optimizer": "Adam",
 
     # LSTM-specific
-    "lstm_units": [256, 256],            # two-layer LSTM, 256 units each
+    "lstm_units": [128, 128],            # two-layer LSTM, 256 units each
     "recurrent_dropout": 0.1,
     "dense_units_after_recurrent": [64], # one dense layer after LSTM
     "activation_after_recurrent": "relu",
@@ -48,7 +48,7 @@ CORRECTOR_MODEL_CONFIG = {
     "optimizer": "Adam",
 
     # FNN-specific
-    "fnn_hidden_layers": [256, 128, 64],
+    "fnn_hidden_layers": [128, 128, 64],
     "fnn_activation": "relu",
     "fnn_output_activation": "linear",
 
