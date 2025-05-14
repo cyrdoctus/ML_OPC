@@ -16,7 +16,7 @@ PREDICTOR_MODEL_CONFIG = {
     "features": ['pos_x', 'pos_y', 'pos_z', 'vel_x', 'vel_y', 'vel_z'],
     "targets": ['pos_x', 'pos_y', 'pos_z', 'vel_x', 'vel_y', 'vel_z'],
 
-    "epochs": 50,
+    "epochs": 1,
     "batch_size": 64,
     "learning_rate": 1e-3,
     "optimizer": "Adam",
@@ -42,7 +42,7 @@ CORRECTOR_MODEL_CONFIG = {
     ],
     "output_targets": ['delta_v_x', 'delta_v_y', 'delta_v_z'],
 
-    "epochs": 100,
+    "epochs": 1,
     "batch_size": 32,
     "learning_rate": 5e-4,
     "optimizer": "Adam",
