@@ -1,4 +1,4 @@
-# my_ai_orbital_project/data_generation/__init__.py
+# ML_Orbital_Predictor_Corrector/data_generation/__init__.py
 
 """
 Data Generation Package
@@ -10,12 +10,7 @@ This package is responsible for:
 - Orchestrating the entire data generation pipeline (run_generation.py).
 """
 
-# Import key functions, classes, or variables from the modules in this package
-# to make them easily accessible at the package level.
-# For example: from data_generation import LEO_ORBIT_ELEMENT_RANGES
-
 # From scenarios.py:
-# You might want to expose the ranges dictionary or a function that generates scenarios.
 try:
     from .scenarios import LEO_ORBIT_ELEMENT_RANGES
 except ImportError:
@@ -42,25 +37,28 @@ except ImportError:
     NORMALIZED_TRAJECTORIES_OUTPUT_DIR = "data_training/normalized_trajectories_fallback_init"
 
 
-# From normalizer.py (once you create it):
-# You might have a main processing function, e.g., process_and_normalize_all_raw_data
-# try:
-#     from .normalizer import normalize_trajectory_data # Example function name
-# except ImportError:
-#     print("Warning: Could not import from data_generation.normalizer")
-#     def normalize_trajectory_data(*args, **kwargs):
-#         print("Fallback normalize_trajectory_data called. Please check normalizer.py.")
+# From normalizer.py
+try:
+    from .normalizer import (
+        normalize_single_trajectory,
+        process_and_save_all  # this is your batch‐runner
+    )
+except ImportError:
+    print("Warning: Could not import from data_generation.normalizer")
+    def normalize_single_trajectory(*args, **kwargs):
+        print("Fallback normalize_single_trajectory called. Please check normalizer.py.")
+    def process_and_save_all(*args, **kwargs):
+        print("Fallback process_and_save_all called. Please check normalizer.py.")
 
 
-# It's good practice to define __all__ to specify the public API of the package
-# when 'from data_generation import *' is used.
 __all__ = [
     'LEO_ORBIT_ELEMENT_RANGES',
     'save_raw_trajectory',
     'save_norm_trajectory',
     'RAW_TRAJECTORIES_OUTPUT_DIR',
     'NORMALIZED_TRAJECTORIES_OUTPUT_DIR',
-    # Add other imported names here, e.g., 'normalize_trajectory_data'
+    'normalize_single_trajectory',
+    'process_and_save_all',
 ]
 
 print("Data Generation package initialized.")
