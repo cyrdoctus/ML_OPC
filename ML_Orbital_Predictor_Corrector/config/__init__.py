@@ -46,8 +46,8 @@ from .sim_params import (
 from .model_hyperparams import (
     VALIDATION_SPLIT_RATIO,
     RANDOM_SEED,
-    AI1_MODEL_CONFIG,
-    AI2_MODEL_CONFIG
+    PREDICTOR_MODEL_CONFIG,
+    CORRECTOR_MODEL_CONFIG
 )
 
 # Define __all__ to specify what 'from config import *' would import
@@ -64,7 +64,7 @@ __all__ = [
     'REF_ORBIT_SEMI_MAJOR_AXIS_KM', 'REF_ORBIT_ECCENTRICITY', 'REF_ORBIT_INCLINATION_DEG',
     'REF_ORBIT_RAAN_DEG', 'REF_ORBIT_ARG_PERIGEE_DEG', 'REF_ORBIT_TRUE_ANOMALY_DEG',
     # From model_hyperparams
-    'VALIDATION_SPLIT_RATIO', 'RANDOM_SEED', 'AI1_MODEL_CONFIG', 'AI2_MODEL_CONFIG'
+    'VALIDATION_SPLIT_RATIO', 'RANDOM_SEED', 'PREDICTOR_MODEL_CONFIG', 'CORRECTOR_MODEL_CONFIG'
 ]
 
 print("Master config package initialized successfully.")
